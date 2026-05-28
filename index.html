@@ -14,10 +14,6 @@
 </head>
 <body>
 
-  <button class="lang-toggle" id="langToggle">
-    <span class="lang-toggle-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> EN
-  </button>
-
   <div class="app" id="app">
 
     <div class="progress-container" id="progressContainer" style="display:none;">
@@ -41,7 +37,7 @@
           </div>
 
           <h1 class="welcome-title animate-in animate-in-delay-2" data-i18n="welcome.title">
-            هل كاحلك... ثابت <em>فعلاً؟</em>
+            هل الكاحل عندك ثابت <em>فعلا</em>
           </h1>
 
           <p class="welcome-subtitle animate-in animate-in-delay-3" data-i18n="welcome.subtitle">
@@ -76,6 +72,104 @@
             ابدأ التقييم
           </button>
           <p class="welcome-time animate-in animate-in-delay-5" data-i18n="welcome.time">يستغرق تقريباً ٥ دقائق</p>
+        </div>
+      </div>
+
+      <div class="screen hidden" id="screen-legal">
+        <div class="screen-content">
+          <div class="phase-label">Armor Protocol — Gateway</div>
+          <h2 class="question-text">إخلاء مسؤولية طبي</h2>
+          <p class="warning-text" style="color: var(--color-warning); margin-bottom: 16px;">⚠️ <strong>برجاء القراءة بعناية قبل المتابعة.</strong></p>
+          
+          <div class="disclaimer-box">
+            <label class="checkbox-label">
+              <input type="checkbox" id="legal-checkbox">
+              <span class="custom-checkbox"></span>
+              هذا التقييم مصمم خصيصاً لتقييم عدم الثبات المزمن (Chronic Instability) والأداء الرياضي. يُمنع منعاً باتاً استخدامه للأشخاص الذين يعانون من إصابات حديثة (Acute)، تورم نشط، أو ألم غير مشخص.
+            </label>
+          </div>
+          
+          <button id="btn-legal-next" class="btn-primary" disabled>موافق — متابعة</button>
+        </div>
+      </div>
+
+      <div class="screen hidden" id="screen-timeline">
+        <div class="screen-content">
+          <div class="phase-label">Armor Protocol — Gateway</div>
+          <h2 class="question-text">تاريخ الإصابة</h2>
+          <p class="question-subtext">إمتى كانت آخر مرة حصلك فيها التواء (Sprain) في الكاحل؟</p>
+          
+          <div class="radio-group" id="timeline-options">
+            <label class="radio-card">
+              <input type="radio" name="timeline" value="acute">
+              <span>الاختيار الأول: من أقل من شهر</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="timeline" value="sub-acute">
+              <span>الاختيار الثاني: من شهر لـ ٣ شهور</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="timeline" value="chronic">
+              <span>الاختيار الثالث: من أكتر من ٣ شهور</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen hidden" id="screen-triage">
+        <div class="screen-content">
+          <div class="phase-label">Armor Protocol — Gateway</div>
+          <h2 class="question-text">تقييم الأعراض</h2>
+          <p class="question-subtext">برجاء الإجابة على الأسئلة دي عشان نتأكد إن الاختبار آمن ليك:</p>
+          
+          <div class="triage-form">
+            <div class="triage-question">
+              <p>١. هل عندك تورم شديد أو كدمات واضحة حالياً؟</p>
+              <label><input type="radio" name="q1" value="yes"> أيوة</label>
+              <label><input type="radio" name="q1" value="no"> لأ</label>
+            </div>
+
+            <div class="triage-question">
+              <p>٢. هل بتواجه صعوبة أو ألم شديد يخليك تعرج لو مشيت ٤ خطوات؟</p>
+              <label><input type="radio" name="q2" value="yes"> أيوة</label>
+              <label><input type="radio" name="q2" value="no"> لأ</label>
+            </div>
+
+            <div class="triage-question">
+              <p>٣. هل بتحس بألم حاد في الكاحل حتى وقت الراحة؟</p>
+              <label><input type="radio" name="q3" value="yes"> أيوة</label>
+              <label><input type="radio" name="q3" value="no"> لأ</label>
+            </div>
+
+            <button id="btn-triage-submit" class="btn-primary">تأكيد الإجابات</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen hidden stop-screen" id="screen-hard-stop">
+        <div class="screen-content">
+          <div class="stop-icon">🛑</div>
+          <h2 class="question-text" style="text-align: center; color: var(--color-danger);">لا يمكن إجراء الاختبار</h2>
+          <p style="text-align: center; color: var(--text-secondary); margin-bottom: 24px;">بناءً على إجاباتك، كاحلك لسه في مرحلة التعافي الأولى (Acute Phase). أداء اختبارات القوة والانفجارية دلوقتي بيمثل خطر كبير للإصابة.</p>
+          
+          <div class="first-aid-guide">
+            <h3>دليل الإسعافات الأولية السريعة</h3>
+            <ul>
+              <li><strong>الحماية:</strong> تجنب أي حركة تسبب ألم حاد.</li>
+              <li><strong>الراحة:</strong> خفف التحميل على رجلك لو المشي بيوجعك.</li>
+              <li><strong>الثلج والضغط:</strong> استخدم الثلج ورباط ضاغط للسيطرة على التورم.</li>
+              <li><strong>الاستشارة:</strong> ضروري تراجع دكتور علاج طبيعي متخصص في الإصابات الرياضية قبل أي تأهيل.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen hidden go-screen" id="screen-green-light">
+        <div class="screen-content" style="text-align: center;">
+          <div class="go-icon">✅</div>
+          <h2 class="question-text" style="color: var(--color-success);">تم اجتياز التقييم الطبي</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 32px;">حالتك تسمح بإجراء اختبارات Armor Protocol. هنبدأ دلوقتي في التقييم الوظيفي.</p>
+          <button id="btn-start-tests" class="btn-primary">ابدأ الاختبار الأول</button>
         </div>
       </div>
 
@@ -507,7 +601,10 @@
         </div>
       </div>
 
-    </div></div><div class="calculating-overlay" id="calculatingOverlay">
+    </div>
+  </div>
+  
+  <div class="calculating-overlay" id="calculatingOverlay">
     <div class="calculating-spinner"></div>
     <div class="calculating-text" data-i18n="calculating.text">جارٍ تحليل نتائجك…</div>
   </div>
