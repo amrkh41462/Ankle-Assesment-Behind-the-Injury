@@ -12,9 +12,9 @@ const I18n = {
     'welcome.title': 'هل الكاحل عندك ثابت <em>فعلا</em>',
     'welcome.subtitle': 'أداة فحص شاملة للرياضيين. اكتشف مشاكل الـ Instability المخفية، واختبر القدرة الحقيقية للـ Ankle، واعرف خطوات عملية عشان ترجع ثقتك.',
     'welcome.feature1.title': 'Subjective Screen (الفحص الذاتي)',
-    'welcome.feature1.desc': 'الـ History، الثقة، والجاهزية النفسية',
+    'welcome.feature1.desc': 'تاريخ الإصابة، الثقة، والجاهزية النفسية',
     'welcome.feature2.title': 'Physical Stress Tests',
-    'welcome.feature2.desc': 'الـ Balance، الـ Endurance، والـ Power',
+    'welcome.feature2.desc': 'الـ التوازن Endurance، والـ Power',
     'welcome.feature3.title': 'Personalized Results',
     'welcome.feature3.desc': 'مستوى الـ Stability، الـ Deficits، وخطوات عملية',
     'welcome.startBtn': 'ابدأ الـ Assessment',
@@ -123,7 +123,7 @@ const I18n = {
     // ==========================================
     'phase2.transition.label': 'Phase 2',
     'phase2.transition.title': 'Physical Stress Tests',
-    'phase2.transition.desc': 'دلوقتي هنختبر الـ Functional Capacity الحقيقية للـ Ankle. هتعمل ٣ اختبارات سريعة عشان نقيم الـ Balance، الـ Endurance، والـ Power.',
+    'phase2.transition.desc': 'دلوقتي هنختبر الـ Functional Capacity الحقيقية للـ Ankle. هتعمل ٣ اختبارات سريعة عشان نقيم الـ التوازن Endurance، والـ Power.',
     'phase2.transition.start': 'ابدأ الاختبارات',
 
     // ==========================================
@@ -137,7 +137,7 @@ const I18n = {
     'balance.step2': 'ارفع رجلك التانية من على الأرض',
     'balance.step3': 'غمض عينك وسيب دراعك Relaxed',
     'balance.step4': 'حاول تثبت لأطول فترة ممكنة (الماكسيموم ٣٠ ثانية)',
-    'balance.step5': 'دوس "فقدت توازني" أول ما تفقد الـ Balance',
+    'balance.step5': 'دوس "فقدت توازني" أول ما تفقد التوازن',
     'balance.timer.unit': 'ثانية',
     'balance.start': 'ابدأ الـ Timer',
     'balance.stop': 'فقدت توازني',
@@ -168,7 +168,7 @@ const I18n = {
     'sidehop.step1': 'حط لزق أو حدد خط على الأرض بعرض ٣٠ سم تقريباً',
     'sidehop.step2': 'اقف على رجلك المصابة جنب الخط',
     'sidehop.step3': 'نط للجنب رايح جاي فوق الخط بأسرع ما يمكن',
-    'sidehop.step4': 'كمل لمدة ٣٠ ثانية وحافظ على الـ Control والـ Balance',
+    'sidehop.step4': 'كمل لمدة ٣٠ ثانية وحافظ على الـ Control والتوازن',
     'sidehop.step5': 'ركز إن الـ Landing بتاعك يكون خفيف وStable في كل نطة',
     'sidehop.step6': 'قيم أدائك في الاختبار بصدق تحت',
     
@@ -191,13 +191,21 @@ const I18n = {
     // ==========================================
     'results.header': 'نتائج التقييم',
     'results.scoreTotal': '/ ١٠٠',
-    'results.acuteWarning.title': '⚠️ تنبيه مهم',
+    'results.acuteWarning.title': 'تنبيه مهم',
     'results.acuteWarning.text': 'بناءً على إجاباتك، ممكن تكون إصابتك لسه في الـ Acute Phase. بننصحك تراجع دكتور أو أخصائي تأهيل قبل ما تبدأ أي Rehab Protocol.',
-    'results.insights.title': '🧠 معنى النتيجة دي إيه؟',
+    'results.insights.title': 'معنى النتيجة دي إيه؟',
     'results.actionSteps.title': 'الـ Next Steps',
     'results.cta.title': 'جاهز تبدأ الـ System الكامل؟',
     'results.cta.button': 'احصل على الـ System ←',
     'results.retake': 'إعادة التقييم (Retake)',
+
+    // ==========================================
+    // CTA Text per Tier
+    // ==========================================
+    'cta.severe': 'الـ Ankle بتاعك محتاج تدخل فوري. الـ Ankle Protocol هيبدأ معاك من الصفر — من الـ Stability الأساسية لحد ما ترجع الملعب بثقة. كل يوم بتأخره بتزود خطر إصابة جديدة.',
+    'cta.moderate': 'الكاحل بتاعك عنده مشاكل مخفية لو ماتعالجتش دلوقتي هتفضل تتكرر. الـ Ankle Protocol هيشتغل على نقط الضعف اللي التقييم كشفها — خطوة بخطوة لحد ما توصل لـ Full Clearance.',
+    'cta.mild': 'إنت قريب جداً — بس الفرق بين \"كويس\" و \"جاهز\" هو اللي بيحميك من الإصابة الجاية. الـ Ankle Protocol هيوصلك للمستوى اللي تقدر تنزل الملعب فيه من غير تفكير.',
+    'cta.optimal': 'أرقامك ممتازة — بس الرياضي الذكي مش بيكتفي بكده. الـ Ankle Protocol فيه الـ Maintenance Program اللي هيخلي الكاحل بتاعك يفضل في الليفل ده ويحميك على المدى الطويل.',
 
     // ==========================================
     // Email Gateway
@@ -212,29 +220,29 @@ const I18n = {
     // Tier Labels
     // ==========================================
     'tier.severe.label': 'Severe Instability (عدم ثبات شديد)',
-    'tier.severe.sublabel': 'High Risk',
-    'tier.moderate.label': 'Moderate CAI (عدم ثبات مزمن)',
+    'tier.severe.sublabel': 'High Risk (خطورة عالية)',
+    'tier.moderate.label': 'Moderate CAI (عدم ثبات مزمن متوسط)',
     'tier.moderate.sublabel': 'Elevated Risk',
-    'tier.mild.label': 'Mild Instability',
-    'tier.mild.sublabel': 'Needs Monitoring',
+    'tier.mild.label': 'Mild Instability (عدم ثبات مزمن خفيف)',
+    'tier.mild.sublabel': 'Needs Monitoring (محتاج متابعة)',
     'tier.optimal.label': 'Optimal Baseline',
-    'tier.optimal.sublabel': 'Low Risk',
+    'tier.optimal.sublabel': 'Low Risk (خطورة منخفضة)',
 
     // ==========================================
     // Category Labels
     // ==========================================
-    'cat.history': 'الـ History',
-    'cat.confidence': 'الـ Confidence',
-    'cat.balance': 'الـ Balance',
-    'cat.endurance': 'الـ Endurance',
-    'cat.power': 'الـ Power & Explosiveness',
+    'cat.history': 'تاريخ الإصابة',
+    'cat.confidence': 'الثقة',
+    'cat.balance': 'التوازن',
+    'cat.endurance': 'التحمل',
+    'cat.power': 'القوة والإنفجارية',
 
     // ==========================================
     // Insights per tier
     // ==========================================
     'insight.severe': 'النتائج بتاعتك بتبين إن عندك Significant Instability (عدم ثبات واضح). قدرة الـ Ankle على إنه يستجيب، يثبت، ويمتص الـ Force أقل بكتير من المطلوب للأداء الرياضي الآمن.\n\nالموضوع مش مجرد Strength — الـ Nervous System بتاعك فقد قدرته إنه يحمي المفصل وقت الحركات المفاجئة. ده نمط طبيعي لـ Chronic Ankle Instability متقدم.\n\nالرياضيين في الليفل ده بيبقوا في High Risk لإصابات تانية لو رجعوا للرياضة من غير Rehab Protocol منظم.',
     
-    'insight.moderate': 'الـ Balance عندك في مستوى معقول، بس الـ Reactive Stability والـ Confidence وقت الهبوط بيبينوا إن الـ Ankle ممكن يخونك وقت الـ Cutting المفاجئ.\n\nده نمط بيحصل كتير في الـ CAI — المفصل خف كـ Structure بس الـ Nervous System لسه ماتعلمش يحميه بالكامل.\n\nالرياضيين هنا بيحسوا إنهم "تمام" في الجري العادي، بس بيلاحظوا الـ Instability وقت الماتشات. الخطر هنا تراكمي، كل مرة المفصل بيفلت بتأكد النمط ده أكتر.',
+    'insight.moderate': 'التوازن عندك في مستوى معقول، بس الـ Reactive Stability والثقة وقت الهبوط بيبينوا إن الـ Ankle ممكن يخونك وقت الـ Cutting المفاجئ.\n\nده نمط بيحصل كتير في الـ CAI — المفصل خف كـ Structure بس الـ Nervous System لسه ماتعلمش يحميه بالكامل.\n\nالرياضيين هنا بيحسوا إنهم "تمام" في الجري العادي، بس بيلاحظوا الـ Instability وقت الماتشات. الخطر هنا تراكمي، كل مرة المفصل بيفلت بتأكد النمط ده أكتر.',
     
     'insight.mild': 'الـ Ankle بتاعك كـ Baseline ممتاز، بس فيه Deficits خفيفة ممكن تأثر عليك تحت الـ High-intensity.\n\nالأرقام القليلة عندك بتبين إن قدرة المفصل على الـ Reaction للحاجات المفاجئة لسه موصلتش لقوتك العضلية. كتير من الرياضيين في المرحلة دي بيتمرنوا كويس جداً بس بيعانوا وقت الماتشات لما الـ Fatigue بيزيد.\n\nدي أكتر مرحلة الرياضيين بيعلقوا فيها — بيحسوا إنهم "Good enough" فمش بيكملوا تأهيل للآخر.',
     
@@ -253,7 +261,7 @@ const I18n = {
     'action.severe.3.desc': 'ماتحاولش تعمل Cutting أو نط أو أي حركات Explosive لحد ما تقدر تقف على رجل واحدة لـ ٣٠+ ثانية بانتظام. ابني الأساس الأول.',
     
     'action.moderate.1.title': 'Unstable Surface Balance',
-    'action.moderate.1.desc': 'اتمرن على الـ Balance على مخدة أو Foam pad — ٣ مجاميع × ٣٠ ثانية. ده هيعمل Challenge للـ Proprioception أكتر من الأرض الثابتة.',
+    'action.moderate.1.desc': 'اتمرن على التوازن على مخدة أو Foam pad — ٣ مجاميع × ٣٠ ثانية. ده هيعمل Challenge للـ Proprioception أكتر من الأرض الثابتة.',
     'action.moderate.2.title': 'Perturbation Training',
     'action.moderate.2.desc': 'وإنت واقف على رجل واحدة، خلي حد يزقك خفيف من كتفك أو وسطك. الـ Ankle لازم يتعلم يعمل React للقوة المفاجئة — مش بس يثبت.',
     'action.moderate.3.title': 'Low-Level Reactive Drills',
@@ -267,7 +275,7 @@ const I18n = {
     'action.mild.3.desc': 'هل تقدر تعمل Single-leg landing من ارتفاع ٢٠ سم من غير أي Wobble؟ خلي ده الـ Benchmark بتاعك. لما تقدر تعمله ١٠/١٠ مرات، إنت كده جاهز.',
     
     'action.optimal.1.title': 'Maintain Reactive Training',
-    'action.optimal.1.desc': 'خلي تمارين الـ Reactive balance في الإحماء بتاعك مرتين أو تلاتة في الأسبوع. ٥ دقايق كفاية عشان تحافظ على استجابة الـ Nervous system.',
+    'action.optimal.1.desc': 'خلي تمارين التوازن التفاعلي (Reactive balance) في الإحماء بتاعك مرتين أو تلاتة في الأسبوع. ٥ دقايق كفاية عشان تحافظ على استجابة الجهاز العصبي (Nervous system).',
     'action.optimal.2.title': 'High-Level Plyometrics',
     'action.optimal.2.desc': 'ادخل في تمارين بليومتريك أتقل زي الـ Depth jumps والـ Lateral bounds تحت ضغط الإرهاق. الهدف هنا الأداء تحت الضغط.',
     'action.optimal.3.title': 'Periodic Retesting',
