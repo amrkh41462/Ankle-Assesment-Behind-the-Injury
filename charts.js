@@ -38,11 +38,11 @@ const RadarChart = {
     const step   = (Math.PI * 2) / count;
     const start  = -Math.PI / 2;            // 12 o'clock
 
-    const accent    = options.accentColor || '#FF6B00';
-    const accentRGB = options.accentRGB   || '255, 107, 0';
-    const gridColor = 'rgba(255, 255, 255, 0.06)';
-    const axisColor = 'rgba(255, 255, 255, 0.08)';
-    const labelClr  = 'rgba(255, 255, 255, 0.55)';
+    const accent    = options.accentColor || '#E8663D';
+    const accentRGB = options.accentRGB   || '232, 102, 61';
+    const gridColor = 'rgba(255, 255, 255, 0.04)';
+    const axisColor = 'rgba(255, 255, 255, 0.06)';
+    const labelClr  = 'rgba(232, 230, 225, 0.50)';
 
     ctx.clearRect(0, 0, W, H);
 
