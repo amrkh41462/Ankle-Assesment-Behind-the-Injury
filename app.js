@@ -13,6 +13,7 @@
   // ============================================
   const state = {
     currentStep: 0,
+    onLegalScreen: false,
     answers: {},
     timer: null,
     counter: null,
@@ -75,6 +76,7 @@
 
     // Show progress bar after entering the main test (Step 1)
     if (step > 0) $('progressContainer').style.display = 'block';
+    updateBackButton();
   }
 
   function nextStep() {
@@ -133,8 +135,9 @@
 
     // Intercept initial Welcome Screen "Start" button
     $('startBtn').addEventListener('click', () => {
-      // Hide welcome screen, trigger gateway
+      state.onLegalScreen = true;
       gateNavigate('screen-welcome', 'screen-legal');
+      updateBackButton();
     });
 
     // Phase 1: Legal Gateway
@@ -146,7 +149,9 @@
     
     if (btnLegalNext) {
       btnLegalNext.addEventListener('click', () => {
-        gateNavigate('screen-legal', 'screen-timeline');
+        state.onLegalScreen = false;
+        gateNavigate('screen-legal', null);
+        goToStep(1);
       });
     }
 
@@ -195,6 +200,45 @@
         gateNavigate('screen-green-light', null); // Hide green light screen
         goToStep(1); // Proceed to Phase 1 history
       });
+    }
+  }
+
+  // ============================================
+  // Back Navigation
+  // ============================================
+  function prevStep() {
+    if (state.onLegalScreen) {
+      // Legal → Welcome
+      gateNavigate('screen-legal', null);
+      state.onLegalScreen = false;
+      state.currentStep = 0;
+      $('screen-welcome').classList.remove('hidden');
+      $('screen-welcome').classList.add('active');
+    } else if (state.currentStep === 1) {
+      // First test → Legal
+      const current = $(SCREENS[1]);
+      if (current) {
+        current.classList.remove('active');
+      }
+      state.currentStep = 0;
+      $('progressContainer').style.display = 'none';
+      state.onLegalScreen = true;
+      const legal = $('screen-legal');
+      legal.classList.remove('hidden');
+      setTimeout(() => legal.classList.add('active'), 50);
+    } else if (state.currentStep > 1 && state.currentStep < RESULTS_STEP) {
+      goToStep(state.currentStep - 1);
+    }
+    updateBackButton();
+  }
+
+  function updateBackButton() {
+    const btn = $('backBtn');
+    if (!btn) return;
+    if (state.onLegalScreen || (state.currentStep >= 1 && state.currentStep < RESULTS_STEP)) {
+      btn.style.display = 'flex';
+    } else {
+      btn.style.display = 'none';
     }
   }
 
@@ -523,6 +567,7 @@
       state.answers = {};
       state.results = null;
       state.currentStep = 0;
+      state.onLegalScreen = false;
       if (state.timer)   state.timer.reset();
       if (state.counter) state.counter.reset();
 
@@ -571,6 +616,10 @@
   // ============================================
   function init() {
     setupClinicalGate(); // Initialize the new branching logic
+
+    // Back button
+    const backBtn = $('backBtn');
+    if (backBtn) backBtn.addEventListener('click', prevStep);
     
     // Original Event Listeners
     $('phase2Start').addEventListener('click', nextStep);
